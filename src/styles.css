@@ -1,0 +1,74 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-header: var(--header);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --font-sans: "Tajawal", "Cairo", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.625rem;
+  /* Souqna brand — deep navy + gold */
+  --background: oklch(0.22 0.07 255);          /* #041C3A */
+  --foreground: oklch(1 0 0);
+  --header: oklch(0.18 0.07 255);              /* #02152d */
+  --card: oklch(0.27 0.08 255);                /* #06264D */
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.27 0.08 255);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(0.78 0.13 85);              /* #D4AF37 gold */
+  --primary-foreground: oklch(0.18 0.07 255);
+  --gold: oklch(0.78 0.13 85);
+  --gold-foreground: oklch(0.18 0.07 255);
+  --secondary: oklch(0.32 0.08 255);           /* #0b2f5c */
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.32 0.08 255);
+  --muted-foreground: oklch(0.87 0 0);         /* #ddd */
+  --accent: oklch(0.78 0.13 85);
+  --accent-foreground: oklch(0.18 0.07 255);
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.78 0.13 85 / 25%);
+  --input: oklch(0.32 0.08 255);
+  --ring: oklch(0.78 0.13 85);
+}
+
+.dark { color-scheme: dark; }
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { direction: rtl; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+}
